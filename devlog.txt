@@ -6,3 +6,7 @@ princedenH -- 2024-1-8 20:36
 
 princedenH, saschaG, kyleL, nafiyuM -- 2024-1-7 20:00
 - created design doc
+
+nafM -- 2024-1-10 11:42
+- setup basic flask in __init__.py
+- created html files: home.htmt, game.html, login.html, settings.html, createGame.html
