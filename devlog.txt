@@ -1,7 +1,8 @@
-princedenH, saschaG, kyleL, nafiyuM -- 2024-1-7 20:00
-- created design doc
+kyleL -- 
+- Added requirements.txt, uploaded design.pdf and added code to __init__.py so that a flask app runs
 
 princedenH -- 2024-1-8 20:36
 - clarified how the game page would be rendered and handle users who are not part of the game rendering it
 
-
+princedenH, saschaG, kyleL, nafiyuM -- 2024-1-7 20:00
+- created design doc
