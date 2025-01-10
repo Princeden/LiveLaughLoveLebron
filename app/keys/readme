@@ -1,0 +1,4 @@
+APIs - All keys are currently held in our local machine:
+● Deck of Cards API: Card images and card tracker within a single deck.
+● Amiibo API: Return an image of a random amiibo
+● Poke API: Returns an image of a random pokemon
