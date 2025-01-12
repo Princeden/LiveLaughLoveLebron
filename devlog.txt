@@ -1,3 +1,6 @@
+kyleL -- 2024-1-12 20:18
+- Created the install guide and the launch code with proper markdown formatting
+
 kyleL -- 2024-1-10 4:27
 - Added requirements.txt, uploaded design.pdf and added code to __init__.py so that a flask app runs
 
