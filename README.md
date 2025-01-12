@@ -16,6 +16,7 @@ As avid enthusiasts of both poker and (responsible) gambling, we have decided to
 
 The game of choice will be Texas hold 'em, a popular modern variation of poker. Each player is dealt two cards, and over time 5 cards will appear on the table. Once all 5 cards are on the table, and if the remaining players reveal the cards, the winner is the player who can make the best five-card hand out of their seven total cards. (Five shared between all players, two private to each player.)
 
+## Install Guide
 ### Recommended Method: 
 We recommend to do this procedure using the Git Clone method. Click the green button in the top right that says "Code". Then, choose "SSH" in the dropdown that appears and copy the URL that is given. Finally, open up your terminal, cd into wherever you desire to hold the folder. Then, type 
 ```
@@ -26,3 +27,21 @@ $ git clone git@github.com:Princeden/LiveLaughLoveLebron.git
 This is an alternate method, if you don't prefer the Git Clone method. Go to the green button in the top right again that says "Code". Then, click "Download Zip". Finally, extract the ZIP file from your downloads and place it in your desired directory. 
 
 Reagardless of which method you choose, navigate to the repo folder and type ```$ pip install -r requirements.txt``` to install required dependencies
+
+## Launch codes
+Open a terminal window and navigate to this project.
+  * Verify that your path looks something like ```~/.../LiveLaughLoveLebron$```
+  
+Activate a python virtual enviornment 
+1. Launch the terminal.
+2. If you do not already have one, run ```$ python3 -m venv {path name}``` to create a virtual environemnt
+3. Activate a venv
+    * macOS/Linux: `$ source {path_name}/bin/activate`
+    * Windows: `$ {path_name}\Scripts\activate`
+
+If you want to deactivate the environment, run ```$ deactivate``` 
+
+When you have the virtual enviornment activated:
+1. Run ```$ python3 -m app.__init__``` in the terminal (OUTSIDE of /app)
+2. Click the link that appears in the terminal to [127.0.0.1:5000](http://127.0.0.1:5000).
+
