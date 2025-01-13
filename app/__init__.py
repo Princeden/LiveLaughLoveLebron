@@ -11,6 +11,7 @@ import os
 from flask import Flask, render_template, request, session, redirect, url_for, flash
 from build_db import setup_database
 from werkzeug.security import generate_password_hash, check_password_hash
+users_in_game = []
 
 def get_db_connection():
     conn = sqlite3.connect('db.db')
@@ -40,7 +41,10 @@ def home():
 #createGame
 @app.route("/lobby")
 def lobby():
-    return render_template("lobby.html") #more vars soon
+    if 'username' in session:
+        if session['username'] not in users_in_game:
+            users_in_game.append(session['username'])
+            return render_template("lobby.html", users=users_in_game) #more vars soon
 #game
 @app.route("/game")
 def game():
