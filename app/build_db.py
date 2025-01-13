@@ -7,7 +7,8 @@ def setup_database():
         CREATE TABLE IF NOT EXISTS users (
             username TEXT PRIMARY KEY UNIQUE,
             email TEXT UNIQUE NOT NULL,
-            password_hash TEXT NOT NULL
+            password_hash TEXT NOT NULL,
+            balance INTEGER
         )
     ''')
 

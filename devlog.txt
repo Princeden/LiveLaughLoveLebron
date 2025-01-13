@@ -1,3 +1,7 @@
+princedenH -- 2024-1-12 23:23
+- Created login, logout, and register functionality
+
+
 kyleL -- 2024-1-12 20:18
 - Created the install guide and the launch code with proper markdown formatting
 

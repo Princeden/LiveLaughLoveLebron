@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-lg font-bold">Home</a>
+            <div>
+                <a href="{{ url_for('settings') }}" class="mr-4 hover:underline">Settings</a>
+                <a href="{{ url_for('lobby') }}" class="mr-4 hover:underline">Lobby</a>
 
+                {% if user %}
+                    <span class="mr-4">Welcome, {{ user['username'] }}</span>
+                    <a href="{{ url_for('logout') }}" class="hover:underline">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="mr-4 hover:underline">Login</a>
+                    <a href="{{ url_for('register') }}" class="hover:underline">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto my-8">
+        <h1 class="text-2xl font-bold">Login</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="mb-4">
+                        {% for category, message in messages %}
+                            <div class="p-2 mb-2 rounded text-white bg-{{ 'red-500' if category == 'danger' else 'green-500' }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+    
+            <form action="/login" method="post">
+                <label for="username" class="block">Username:</label>
+                <input type="text" name="username" id="username" class="border p-2 w-full mb-4" required>
+                <label for="password" class="block">Password:</label>
+                <input type="password" name="password" id="password" class="border p-2 w-full mb-4" required>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Login</button>
+            </form>
+        <p>New user? <a href="/register" class="text-blue-500">Register here</a>.</p>
+    </div>
+</body>
+</html>

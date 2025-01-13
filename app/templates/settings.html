@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Home - LiveLaughLebronPoker</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="text-lg font-bold">Home</a>
+            <div>
+                <a href="{{ url_for('settings') }}" class="mr-4 hover:underline">Settings</a>
+                <a href="{{ url_for('lobby') }}" class="mr-4 hover:underline">Lobby</a>
+
+                {% if user %}
+                    <span class="mr-4">Welcome, {{ user['username'] }}</span>
+                    <a href="{{ url_for('logout') }}" class="hover:underline">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="mr-4 hover:underline">Login</a>
+                    <a href="{{ url_for('register') }}" class="hover:underline">Register</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mx-auto my-12 p-8 bg-white shadow-lg rounded-lg">
+
+
+        {% if user %}
+            <h1 class="text-4xl font-bold mb-4">Welcome Back, {{ user['username'] }}!</h1>
+            <p class="text-lg mb-6">Play games and win big!</p>
+        {% else %}
+            <h1 class="text-4xl font-bold mb-4">Welcome to LiveLaughLebronPoker!</h1>
+            <p class="text-lg mb-6">Sign up or log in to begin playing!</p>
+        {% endif %}
+
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <p>wijdwpodwopdkwopdpwkdop</p>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
