@@ -12,15 +12,16 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="{{ url_for('home') }}" class="text-lg font-bold">Home</a>
             <div>
-                <a href="{{ url_for('settings') }}" class="mr-4 hover:underline">Settings</a>
-                <a href="{{ url_for('lobby') }}" class="mr-4 hover:underline">Lobby</a>
+
 
                 {% if user %}
                     <span class="mr-4">Welcome, {{ user['username'] }}</span>
-                    <a href="{{ url_for('logout') }}" class="hover:underline">Logout</a>
+                    <a href="{{ url_for('logout') }}" class="mr-4 hover:underline">Logout</a>
+                    <a href="{{ url_for('settings') }}" class="mr-4 hover:underline">Settings</a>
+                <a href="{{ url_for('lobby') }}" class="mr-4 hover:underline">Lobby</a>
                 {% else %}
                     <a href="{{ url_for('login') }}" class="mr-4 hover:underline">Login</a>
-                    <a href="{{ url_for('register') }}" class="hover:underline">Register</a>
+                    <a href="{{ url_for('register') }}" class="mr-4 hover:underline">Register</a>
                 {% endif %}
             </div>
         </div>
