@@ -21,21 +21,20 @@ async function getCards() {
     }));
     return cardData;
 }
-class Card{
+/* class Card{
     constructor(rank, suit) {
       this.rank = rank;
       this.suit = suit;
     }
-}
+} */
 class Player{
-    constructor(self, username, balance, i){
+    constructor(username, balance){
         this.balance = balance
         this.username = username
-        cards = getCards()
-        this.value1 = cards[value1]
-        this.value2 = cards[value2]
-        this.suit1 = cards[suit1]
-        this.suit2 = cards[suit2]
+        this.hand = [];
+    }
+    receieveCard(card){
+        this.hand.push(card); 'Note cards are dictionaries'
     }
   }
 class Table{
@@ -48,7 +47,31 @@ class Table{
         this.p6 = players[5]
         this.center = [];
         this.pot = 0;
-
       }
+    'Call game with players'
+}
+async function game(players) {
+    let deck = await getCards();  
 
+    const players = [];
+    'Add players'
+    
+    for (let i = 0; i < 6; i++) {
+        players[i].receiveCard(deck.pop());  // First card
+        players[i].receiveCard(deck.pop());  // Second card
+    }
+
+    // Deal community cards (Flop, Turn, River)
+    const center = [];
+
+    // Flop (3 cards)
+    for (let i = 0; i < 3; i++) {
+        center.push(deck.pop());
+    }
+
+    // Turn (1 card)
+    center.push(deck.pop());
+
+    // River (1 card)
+    center.push(deck.pop());
 }
