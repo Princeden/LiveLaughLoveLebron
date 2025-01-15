@@ -7,8 +7,7 @@ from project import *
 
 
 def getCards():
-    n = getUsers()
-    data = getNeededCards(n)
+    data = getNeededCards(52)
     cardData = []
     for card in data:
         cardData.append({"value": card["value"], "suit": card["suit"]})
