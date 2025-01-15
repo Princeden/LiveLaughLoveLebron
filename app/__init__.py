@@ -13,7 +13,14 @@ from build_db import setup_database
 from werkzeug.security import generate_password_hash, check_password_hash
 users_in_game = []
 
+def get_db_connection():
+    conn = sqlite3.connect('db.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
 app = Flask(__name__)
+app.secret_key = os.urandom(32)
+
 
 def getUsers():
     return len(users_in_game)
