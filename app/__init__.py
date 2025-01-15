@@ -13,6 +13,8 @@ from build_db import setup_database
 from werkzeug.security import generate_password_hash, check_password_hash
 users_in_game = []
 
+app = Flask(__name__)
+
 def getUsers():
     return len(users_in_game)
     

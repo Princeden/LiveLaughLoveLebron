@@ -14,3 +14,4 @@ def getNeededCards(n):
         print(f"HTTP Error: {e.code}, {e.reason}")
     except urllib.error.URLError as e:
         print(f"URL Error: {e.reason}")
+

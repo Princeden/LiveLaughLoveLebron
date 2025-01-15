@@ -3,7 +3,6 @@ import urllib.parse
 import json
 import zlib
 from .api import *
-from project import *
 
 
 def getCards():
